@@ -61,7 +61,6 @@ function TodoItem({ todos }) {
 }
 export default TodoItem;
 //
-
 const TodoList = styled.div`
   background-color: rgb(20, 20, 20);
   border: none;

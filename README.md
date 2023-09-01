@@ -1,6 +1,7 @@
-### 리액트 JS 기반의 To Do 웹 어플리케이션 개발
+### React - Redux 기반의 To Do 웹 어플리케이션
 
-- 개발자 : 김동현 (김고야), 양진혁
+- 개발자 : 양진혁, 김동현 (김고야)
+- 기술 : React JS, Redux, Styled Components, React Router Dom
 - 구조 :
   📁 src
   |— index.js
