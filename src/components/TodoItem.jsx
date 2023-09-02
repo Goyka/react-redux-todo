@@ -6,8 +6,8 @@ import { styled } from "styled-components";
 //
 function TodoItem({ todos }) {
   const dispatch = useDispatch();
-  const detailTodo = useSelector((state) => state.detailTodos);
-  console.log(detailTodo);
+  const detailTodo = useSelector((state) => state.reducer.detailTodos);
+
   const { id, title, value, isDone } = todos;
 
   const handleClick = () => {

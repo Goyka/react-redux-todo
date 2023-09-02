@@ -1,30 +1,25 @@
 import React from "react";
-import { Provider } from "react-redux";
-import store from "../modules/store";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { styled } from "styled-components";
 //
 const TodoDetail = () => {
-  const detailTodos = useSelector((state) => state.detailTodos);
+  const detailTodos = useSelector((state) => state.reducer.detailTodos);
   return (
-    <Provider store={store}>
-      <DetailWrap>
-        <DetailHeader>
-          <h4>data number → {detailTodos.id}</h4>
-          <Backward to="/">❮ back</Backward>
-        </DetailHeader>
-        <>
-          <DetailTitle>{detailTodos.title}</DetailTitle>
-          <DetailValue>{detailTodos.value}</DetailValue>
-        </>
-      </DetailWrap>
-    </Provider>
+    <DetailWrap>
+      <DetailHeader>
+        <h4>data number → {detailTodos.id}</h4>
+        <Backward to="/">❮ back</Backward>
+      </DetailHeader>
+      <>
+        <DetailTitle>{detailTodos.title}</DetailTitle>
+        <DetailValue>{detailTodos.value}</DetailValue>
+      </>
+    </DetailWrap>
   );
 };
 export default TodoDetail;
 //
-
 const DetailWrap = styled.div`
   background-color: whitesmoke;
   border-radius: 9px;

@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem.jsx";
 import { styled } from "styled-components";
 //
 function TodoList() {
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.reducer.todos);
 
   return (
     <ListWrap>
@@ -35,6 +35,7 @@ const ListWrap = styled.div`
 const DoList = styled.div`
   padding: 15px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   color: rgb(20, 20, 20);
   font-size: 23px;
@@ -43,6 +44,7 @@ const DoList = styled.div`
 const DoneList = styled.div`
   padding: 15px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   color: rgb(20, 20, 20);
   font-size: 23px;

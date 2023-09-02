@@ -1,37 +1,36 @@
 import React from "react";
-import { Provider } from "react-redux";
-import store from "../modules/store";
-//
+import { useState } from "react";
+import { styled } from "styled-components";
 import TodoCreate from "../components/TodoCreate";
 import TodoList from "../components/TodoList";
-import { styled } from "styled-components";
+
+import Modal from "../components/Modal";
 //
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <Provider store={store}>
-      <Wrap>
-        <Header>
-          <Title>:::todolist:::</Title>
-          <Btn
-            onClick={() => {
-              alert(`
-              Hanghae 99, 16th Class :: JinHyeok Yang, Goya Gim
-              + + +
-              Stack :: React JS, Vanilla Redux
-              `);
-            }}
-          >
-            about
-          </Btn>
-        </Header>
-        <>
-          <TodoCreate />
-        </>
-        <>
-          <TodoList />
-        </>
-      </Wrap>
-    </Provider>
+    <Wrap>
+      <Header>
+        <Title>:::todolist:::</Title>
+        <Btn
+          onClick={openModal}
+          style={{ display: isModalOpen ? "none" : "block" }}
+        >
+          about
+        </Btn>
+        <Modal isOpen={isModalOpen} closeModal={closeModal} />
+      </Header>
+      <>
+        <TodoCreate />
+      </>
+      <>
+        <TodoList />
+      </>
+    </Wrap>
   );
 };
 export default Home;
@@ -46,6 +45,7 @@ const Wrap = styled.div`
   padding: 20px;
   border-radius: 19px;
   padding: 0px 10px 10px 30px;
+  z-index: -1;
 `;
 
 const Header = styled.div`
@@ -76,5 +76,4 @@ const Btn = styled.button`
   color: whitesmoke;
   font-weight: bold;
   cursor: pointer;
-  z-index: 1;
 `;

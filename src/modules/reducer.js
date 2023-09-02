@@ -10,12 +10,10 @@ export const reducer = (state = initState, action) => {
       return { ...state, todos: [...state.todos, action.todo] };
     case DELETE:
       return {
-        ...state,
         todos: [...state.todos.filter((todo) => todo.id !== action.id)],
       };
     case DONE:
       return {
-        ...state,
         todos: state.todos.map((todo) =>
           todo.id === action.id ? { ...todo, isDone: !todo.isDone } : todo
         ),
@@ -23,7 +21,6 @@ export const reducer = (state = initState, action) => {
       };
     case DETAIL:
       return {
-        ...state,
         todos: [...state.todos],
         detailTodos: action.todo,
       };
