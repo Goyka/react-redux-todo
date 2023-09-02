@@ -11,6 +11,7 @@
   |——— TodoCreate.jsx
   |——— TodoItem.jsx
   |——— TodoList.jsx
+  |——— Modal.jsx
   |— 📁 modules
   |——— store.js
   |——— reducer.js
