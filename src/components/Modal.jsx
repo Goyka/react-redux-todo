@@ -1,6 +1,16 @@
 import React from "react";
 import { styled } from "styled-components";
 //
+function Modal({ isOpen, closeModal }) {
+  return (
+    <ModalWrap style={{ display: isOpen ? "block" : "none" }}>
+      <ModalBtn onClick={closeModal}>Close</ModalBtn>
+      <ModalTitle>Hanghae 99, Class 16th : Jinhyeok Yang, Goya Gim</ModalTitle>
+    </ModalWrap>
+  );
+}
+
+export default Modal;
 
 const ModalWrap = styled.div`
   margin: 29px 21px 0 10px;
@@ -33,14 +43,3 @@ const ModalBtn = styled.button`
   font-weight: bold;
   cursor: pointer;
 `;
-
-function Modal({ isOpen, closeModal }) {
-  return (
-    <ModalWrap style={{ display: isOpen ? "block" : "none" }}>
-      <ModalBtn onClick={closeModal}>Close</ModalBtn>
-      <ModalTitle>Hanghae 99, Clase 16th : Jinhyeok Yang, Goya Gim</ModalTitle>
-    </ModalWrap>
-  );
-}
-
-export default Modal;
